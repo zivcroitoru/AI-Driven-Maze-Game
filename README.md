@@ -1,20 +1,84 @@
-# AI-Driven Maze Game
+# Hybrid AI Maze Solver
 
-A Python-based simulation and visualization system for training and evaluating an autonomous agent in a 2D grid maze. This project uses a Hybrid AI approach, combining Q-Learning with A* heuristic guidance to improve learning speed.
+A 2D simulation for training autonomous agents using Reinforcement Learning and A* pathfinding.
 
-## Features
-* **Hybrid Policy:** Uses Q-Learning as the core mechanism and A* for guided exploration.
-* **Visual Mode:** Real-time rendering using PyGame to watch the agent learn.
-* **Headless Mode:** High-speed training without rendering to maximize throughput.
-* **Data Logging:** Automatic CSV export of success rates, steps, and rewards.
+## 🏗 Architecture
 
-## Requirements
-* Python 3.10+
-* NumPy >= 1.21
-* PyGame
-* Pandas and Matplotlib
+The project uses the **Model-View-Controller (MVC)** pattern:
 
-## How to Run
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/AI-Driven-Maze-Game.git](https://github.com/YOUR_USERNAME/AI-Driven-Maze-Game.git)
+* **Model:** Handles simulation logic, Q-Learning, and A* pathfinding.
+* **View:** PyGame-based 60 FPS rendering.
+* **Controller:** Manages training loops and data flow.
+
+## 🛠 Tech Stack
+
+* **Language:** Python 3.10+
+* **Graphics:** PyGame
+* **Data:** NumPy, Pandas, Matplotlib
+* **Logic:** Q-Learning & A* Heuristics
+
+---
+
+## 🚀 Installation (Linux/WSL)
+
+### 1. System Dependencies
+
+```bash
+sudo apt update
+sudo apt install -y python3 python3-venv python3-pip
+sudo apt install -y libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-ttf-2.0-0 libfreetype6 libportmidi0
+
+```
+
+### 2. Virtual Environment & Python Libs
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install pygame numpy pandas matplotlib
+
+```
+
+---
+
+## 💻 Usage
+
+Run from the **project root** directory:
+
+| Mode | Command |
+| --- | --- |
+| **Headless (Fast)** | `python -m src.main` |
+| **Visualized** | `python -m src.main --visual 1` |
+| **Interactive** | `python -m src.main --visual 1 --interactive 1` |
+
+### Key Arguments
+
+* `--episodes N`: Training length (Default: 300).
+* `--rows / --cols N`: Grid dimensions.
+* `--wallDensity X`: Obstacle density (0.0 - 1.0).
+* `--heuristicRate X`: Probability of A* guidance during exploration.
+* `--alpha / --gamma`: RL learning rate and discount factor.
+
+---
+
+## 📂 Project Structure
+
+```text
+AI-Driven-Maze-Game/
+├── src/      # Hybrid Logic, A*, Environment
+├── tests/    # Unit and integration tests
+├── docs/     # Technical specs
+├── assets/   # PyGame sprites
+└── data/     # Logs and saved Q-Tables
+
+```
+
+---
+
+## 👥 Team
+
+* **Denis Raev:** System Architect
+* **Ziv Croitoru:** Algorithm Engineer
+* **Ilia Chirkov:** Simulation Logic
+* **Yehonatan Shapira:** UI/UX & QA
