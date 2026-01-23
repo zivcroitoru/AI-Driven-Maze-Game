@@ -8,8 +8,6 @@ The system follows the **Model-View-Controller (MVC)** architectural pattern to 
 
 
 
-[Image of Model-View-Controller architecture diagram]
-
 
 * **Model (Logic Layer):** Encapsulates simulation data, environment rules, and decision-making intelligence, including the Hybrid Agent and A* module.
 * **View (Presentation Layer):** A PyGame-based visualization component that renders the simulation state at 60 FPS.
@@ -43,10 +41,24 @@ The system follows the **Model-View-Controller (MVC)** architectural pattern to 
     ```
 
 ## Project Structure
-* **`/src`:** Core logic including the Hybrid Agent, A* Pathfinder, and Maze Environment.
-* **`/assets`:** UI elements and sprites for the PyGame interface.
-* **`/data`:** Persistent telemetry logs (`training_logs.csv`) and saved model weights (.npy/.json).
-* **`/tests`:** Validation scripts for unit and integration testing.
+The project is organized to support the MVC architecture and automated testing:
+
+* **`/src`**: Core logic including the Hybrid Agent, A* Pathfinder, and Maze Environment.
+* **`/tests`**: Validation scripts for unit and integration testing.
+* **`/docs`**: Technical documentation, characterization, and design specs.
+* **`/assets`**: UI elements and sprites for the PyGame interface.
+* **`/data`**: Persistent telemetry logs and saved model weights.
+
+### Directory Tree
+```text
+AI-Driven-Maze-Game/
+├── src/            # Source code (Hybrid Logic, A*, Environment)
+├── tests/          # Unit and integration tests
+├── docs/           # Technical documentation and specs
+├── assets/         # Visual assets for PyGame
+├── data/           # Training logs and model persistence
+├── .gitignore      # Git exclusion file
+└── README.md       # Project entry point and overview
 
 ## Usage
 * **Guided Exploration:** During training, the agent can query the A* Pathfinder for a "Heuristic Teacher" move to accelerate convergence.
@@ -54,10 +66,10 @@ The system follows the **Model-View-Controller (MVC)** architectural pattern to 
 * **Deterministic Generation:** Uses seed-based generation to ensure reproducible maze layouts for research.
 
 ## Team
-* **Ziv Croitoru** - Lead Developer.
-* **Ilia Chirkov** - Developer.
-* **Dennis Raev** - Developer.
-* **Yonatan Shapira** - Developer.
+* **Denis Raev** - System Architect.
+* **Ziv Croitoru** - Algorithm Engineer.
+* **Ilia Chirkov** - Simulation Logic Engineer.
+* **Yehonatan Shapira** - UI/UX Engineer & QA.
 
 ## Status
 * ✅ **Operational:** Hybrid Q-Learning/A* integration, seed-based maze generation, and MVC architectural integrity.
