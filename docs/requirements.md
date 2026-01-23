@@ -20,28 +20,33 @@
 * **As a Researcher:** I want to run the system in headless mode to maximize training speed and throughput.
 * **As a Researcher:** I want to compare "Pure Q-Learning" vs. "Hybrid AI" to measure improvements in learning speed and path optimality.
 
-### Use Case Diagram
+### Primary Use Cases
 
-* **Actors:** User (execution focused) and Researcher (analysis focused).
-* **Key Actions:** Configure Training, Start Training, Visualize Training, Export Logs, and Run Evaluation.
+**UC-1: Configure Maze and Start Training**
+The user opens the configuration panel to set maze and training parameters. Once "Start Training" is clicked, the system generates the maze, initializes the agent, and begins the training loop across multiple episodes.
+
+
+**UC-2: Run Evaluation Episode with Trained Agent**
+The user selects "Evaluation Mode" and chooses a seed type. The system loads the trained policy from storage and runs evaluation episodes without learning or exploration to provide success results and trajectory metrics.
 
 ---
 
 ## 3. Interaction & Logic Flow
 
-### Sequence Diagram
+### Training Logic Flow
 
 The training cycle follows a discrete-time control cycle governed by the Markov Decision Process (MDP):
 1. **Observation:** The Agent identifies the current state (coordinates) from the Environment.
-2. **Action Selection:** The Agent chooses between Exploitation (Q-Table) or Exploration (Random move or A* Guided).
-3. **Execution:** The selected action is sent to the Environment, which returns the new state, reward, and a termination flag.
-4. **Q-Update:** The Agent updates the Q-Table using the Bellman Equation based on the reward and future value.
+2. **Action Selection:** The Agent chooses between Exploitation (Q-Table) or Exploration (Random move or A* Guided via the Integration Layer).
+3. **Execution:** The selected action is sent to the Environment, which returns the next state, outcome, and reward.
+4. **Q-Update:** The Agent updates the policy using the Bellman Equation based on the reward and future value.
+5. **Logging:** Step and episode metrics are recorded in real-time for later analysis.
 
-### Decision Logic (Activity Diagram)
+### Evaluation Logic Flow
 
-The system features a critical **"Hybrid Fork"** during exploration:
-* **Guided Exploration:** If a random probability $P <$ Heuristic Rate, the Agent queries A* for the next optimal step.
-* **Random Exploration:** Otherwise, the Agent picks a completely random valid move.
+To measure true performance, the evaluation flow uses a fixed policy:
+* **Consistency:** The system ensures consistent environment reset behavior across test mazes.
+* **Metrics:** The system records success rate, average steps to goal, and path efficiency to compare against A* baselines.
 
 ---
 
