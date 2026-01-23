@@ -36,7 +36,7 @@ def _parseArgs() -> argparse.Namespace:
     p.add_argument("--cellSize", type=int, default=28)
     p.add_argument("--fps", type=int, default=60)
 
-    p.add_argument("--logFile", type=str, default="training_logs.csv")
+    p.add_argument("--logFile", type=str, default="./data/training_logs.csv")
     return p.parse_args()
 
 
