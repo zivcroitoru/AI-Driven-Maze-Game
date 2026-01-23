@@ -67,7 +67,6 @@ Run from the **project root** directory:
 ```text
 AI-Driven-Maze-Game/
 ├── src/      # Hybrid Logic, A*, Environment
-├── tests/    # Unit and integration tests
 ├── docs/     # Technical specs
 ├── assets/   # PyGame sprites
 └── data/     # Logs and saved Q-Tables
