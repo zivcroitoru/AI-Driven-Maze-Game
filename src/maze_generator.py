@@ -6,8 +6,8 @@ from __future__ import annotations
 from typing import Tuple
 import random
 
-from .core_types import Grid, MazeGenParams, State
-from .pathfinder import Pathfinder
+from core_types import Grid, MazeGenParams, State
+from pathfinder import Pathfinder
 
 
 class MazeGenerator:

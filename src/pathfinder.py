@@ -6,7 +6,8 @@ from __future__ import annotations
 from typing import Dict, List, Optional, Tuple
 import heapq
 
-from .core_types import Action, Grid, Path, State
+from core_types import Action, Grid, Path, State
+
 
 
 class Pathfinder:

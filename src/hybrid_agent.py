@@ -6,9 +6,9 @@ from __future__ import annotations
 from typing import Dict, List, Optional, Tuple
 import random
 
-from .core_types import Action, State
-from .environment import Environment
-from .pathfinder import Pathfinder
+from core_types import Action, State
+from environment import Environment
+from pathfinder import Pathfinder
 
 
 class HybridAgent:

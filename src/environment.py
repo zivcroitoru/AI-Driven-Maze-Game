@@ -5,7 +5,8 @@ from __future__ import annotations
 
 from typing import Tuple
 
-from .core_types import Action, Grid, State
+from core_types import Action, Grid, State
+
 
 
 class Environment:
