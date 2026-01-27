@@ -1,6 +1,9 @@
 ## 1. Functional Requirements
 
 * **Maze Generation:** The system shall create $N \times M$ grids with static obstacles (walls), a single start cell, and a single goal cell.
+
+![Environment Class Diagram](../images/environment_class_diagram.png)
+
 * **Reachability Validation:** The system must verify that a valid path exists between the start and goal using the Pathfinder module before training begins.
 * **Hybrid AI Navigation Policy:**
     * **Core Learning:** Implementation of a Q-Learning agent using a tabular Q-Table to learn action values for each discrete state.
@@ -25,15 +28,23 @@
 **UC-1: Configure Maze and Start Training**
 The user opens the configuration panel to set maze and training parameters. Once "Start Training" is clicked, the system generates the maze, initializes the agent, and begins the training loop across multiple episodes.
 
+![UC-1 Sequence Diagram](../images/uc1_training_sequence.png)
+
 
 **UC-2: Run Evaluation Episode with Trained Agent**
 The user selects "Evaluation Mode" and chooses a seed type. The system loads the trained policy from storage and runs evaluation episodes without learning or exploration to provide success results and trajectory metrics.
 
+![UC-2 Sequence Diagram](../images/uc2_evaluation_sequence.png)
 ---
 
 ## 3. Interaction & Logic Flow
+The interaction between the Controller and the Environment follows a standard Request-Response pattern for each time step.
+
+![Step Sequence Diagram](../images/step_sequence_diagram.png)
 
 ### Training Logic Flow
+
+![Training Flow Sequence](../images/training_flow_sequence.png)
 
 The training cycle follows a discrete-time control cycle governed by the Markov Decision Process (MDP):
 1. **Observation:** The Agent identifies the current state (coordinates) from the Environment.
@@ -43,8 +54,10 @@ The training cycle follows a discrete-time control cycle governed by the Markov 
 5. **Logging:** Step and episode metrics are recorded in real-time for later analysis.
 
 ### Evaluation Logic Flow
-
 To measure true performance, the evaluation flow uses a fixed policy:
+
+![Evaluation Flow Sequence](../images/evaluation_flow_sequence.png)
+
 * **Consistency:** The system ensures consistent environment reset behavior across test mazes.
 * **Metrics:** The system records success rate, average steps to goal, and path efficiency to compare against A* baselines.
 
