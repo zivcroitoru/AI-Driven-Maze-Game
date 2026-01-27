@@ -208,5 +208,50 @@ With visualization and interactive controls:
 
 &nbsp;  python -m src.main --alpha 0.1 --gamma 0.99 --epsilon 0.25 --heuristicRate 0.30
 
+---
 
+## 🧪 Running Unit Tests
 
+All automated tests are located in the `tests/` directory and use **pytest**.
+
+---
+
+### 1. Activate the virtual environment
+
+From the project root directory, run:
+
+```bash
+source venv/bin/activate 
+```
+Note: If the virtual environment does not exist yet, create it first:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install pytest
+```
+### 2. Run all tests
+Make sure you are in the project root directory, then run:
+```bash
+PYTHONPATH=src pytest -v tests/
+```
+
+### 3. Run a single test file
+Example:
+```bash
+PYTHONPATH=src pytest -v tests test_environment.py
+```
+### 4. Expected Output
+If everything works correctly, you should see output similar to this:
+```bash
+================== test session starts ==================
+collected 4 items
+
+tests/test_environment.py ..... PASSED
+tests/test_maze_generator.py ... PASSED
+tests/test_pathfinder.py ..... PASSED
+tests/test_hybrid_agent.py .... PASSED
+
+================== 4 passed in 0.45s ====================
+```
