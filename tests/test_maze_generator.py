@@ -1,9 +1,10 @@
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from maze_generator import MazeGenerator
-from core_types import MazeGenParams
+from src.maze_generator import MazeGenerator
+from src.core_types import MazeGenParams
+
 import numpy as np
 
 def test_generate_creates_valid_grid():

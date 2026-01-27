@@ -5,7 +5,8 @@ from __future__ import annotations
 
 from typing import Any, Dict, Optional
 
-from .core_types import Grid, State
+from .core_types import Grid, MazeGenParams, State
+
 
 
 class MazeUI:

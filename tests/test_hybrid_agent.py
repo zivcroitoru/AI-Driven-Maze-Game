@@ -1,10 +1,11 @@
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from hybrid_agent import HybridAgent
-from environment import Environment
-from core_types import Action
+from src.hybrid_agent import HybridAgent
+from src.environment import Environment
+from src.core_types import Action
+
 import numpy as np
 
 def create_simple_env():

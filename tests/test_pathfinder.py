@@ -1,9 +1,9 @@
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from pathfinder import Pathfinder
-from core_types import Action
+from src.pathfinder import Pathfinder
+from src.core_types import Action
 import numpy as np
 
 def test_astar_finds_path():

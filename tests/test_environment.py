@@ -1,11 +1,13 @@
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from environment import Environment
-from core_types import Action
+
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, project_root)
+
+from src.environment import Environment
+from src.core_types import Action
 import numpy as np
-
 def test_reset_returns_start_position():
     grid = np.zeros((5, 5), dtype=int)
     start = (0, 0)

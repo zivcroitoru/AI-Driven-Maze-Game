@@ -1,8 +1,7 @@
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
-
-from core_types import Action
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from src.core_types import Action
 
 def test_action_delta():
     assert Action.delta(Action.UP) == (-1, 0)

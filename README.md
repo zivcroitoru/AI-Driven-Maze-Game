@@ -51,6 +51,8 @@ Run from the **project root** directory:
 | **Headless (Fast)** | `python -m src.main` |
 | **Visualized** | `python -m src.main --visual 1` |
 | **Interactive** | `python -m src.main --visual 1 --interactive 1` |
+| **Run All Tests** | `PYTHONPATH=src pytest tests/` |
+
 
 ### Key Arguments
 
@@ -67,6 +69,7 @@ Run from the **project root** directory:
 ```text
 AI-Driven-Maze-Game/
 ├── src/      # Hybrid Logic, A*, Environment
+├── tests/    # Unit tests
 ├── docs/     # Technical specs
 ├── assets/   # PyGame sprites
 └── data/     # Logs and saved Q-Tables
