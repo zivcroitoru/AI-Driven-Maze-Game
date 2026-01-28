@@ -2,7 +2,7 @@
 
 A 2D simulation for training autonomous agents using Reinforcement Learning and A* pathfinding.
 
-## 🏗 Architecture
+## Architecture
 
 The project uses the **Model-View-Controller (MVC)** pattern:
 
@@ -10,7 +10,7 @@ The project uses the **Model-View-Controller (MVC)** pattern:
 * **View:** PyGame-based 60 FPS rendering.
 * **Controller:** Manages training loops and data flow.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 * **Language:** Python 3.10+
 * **Graphics:** PyGame
@@ -19,7 +19,7 @@ The project uses the **Model-View-Controller (MVC)** pattern:
 
 ---
 
-## 🚀 Installation (Linux/WSL)
+## Installation (Linux/WSL)
 
 ### 1. System Dependencies
 
@@ -42,7 +42,7 @@ pip install pygame numpy pandas matplotlib
 
 ---
 
-## 💻 Usage
+## Usage
 
 Run from the **project root** directory:
 
@@ -64,7 +64,7 @@ Run from the **project root** directory:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 AI-Driven-Maze-Game/
@@ -78,7 +78,7 @@ AI-Driven-Maze-Game/
 
 ---
 
-## 👥 Team
+## Team
 
 * **Denis Raev:** System Architect
 * **Ziv Croitoru:** Algorithm Engineer
